@@ -17,9 +17,7 @@ aristocracy_ideas = {
 	}
 
 	trigger = {
-		OR = {
-			has_government_attribute = enables_aristocratic_idea_group
-		}
+		has_government_attribute = enables_aristocratic_idea_group
 	}
 	
 	noble_knights = {
@@ -233,31 +231,38 @@ innovativeness_ideas = {
 	category = ADM
 
 	bonus = {
-		advisor_cost = -0.25
+		advisor_cost = -0.5
 	}
 
 	patron_of_art  = {
-		prestige_decay = -0.01
+		prestige_decay = -0.5
+		diplomatic_reputation = 2
 	}
 	empiricism = {
-		innovativeness_gain = 0.5
+		innovativeness_gain = 5
 	}
 	scientific_revolution = {
-		technology_cost = -0.1
-		embracement_cost = -0.1
+		technology_cost = -0.5
+		embracement_cost = -0.5
 	}
 	dynamic_court = {
-		advisor_pool = 1
+		advisor_pool = 5
 	}
 	print_culture = {
-		global_institution_spread = 0.25
+		global_institution_spread = 0.5
 	}
 	optimism = {
-		war_exhaustion = -0.05
-		free_leader_pool = 1
+		war_exhaustion = -0.1
+		free_leader_pool = 3
+		infantry_power = 0.1
+		cavalry_power = 0.1
+		artillery_power = 0.1
+		heavy_ship_power = 0.2
+		galley_power = 0.25
 	}
 	expanded_policies = {
-		free_policy = 1
+		free_policy = 5
+		possible_policy = 6
 	}
 
 	ai_will_do = {
@@ -282,42 +287,38 @@ religious_ideas = {
 	category = ADM
 
 	bonus = {
-		culture_conversion_cost = -0.25
-		brahmins_hindu_loyalty_modifier = 0.1
-		church_loyalty_modifier = 0.1
-	}
-	
-	trigger = {
-		NOT = {has_idea_group = humanist_ideas}
+		culture_conversion_cost = -0.75
+		brahmins_hindu_loyalty_modifier = 0.4
+		church_loyalty_modifier = 0.4
 	}
 
 	missionary_schools = {
-		missionaries = 1
+		missionaries = 3
 	}
 	church_attendance_duty = {
-		stability_cost_modifier = -0.25
+		stability_cost_modifier = -0.5
 	}
 	divine_supremacy = {
-		global_missionary_strength = 0.03
+		global_missionary_strength = 0.1
 	}
 	devoutness = {
-		tolerance_own = 2
-		papal_influence = 2
-		devotion = 0.5
-		monthly_fervor_increase = 0.25
-		church_power_modifier = 0.1
-		monthly_piety_accelerator = 0.001
-		yearly_karma_decay = 0.1
-		yearly_doom_reduction = 1
-		yearly_authority = 0.15
-		yearly_patriarch_authority = 0.005
+		tolerance_own = 10
+		papal_influence = 5
+		devotion = 1
+		monthly_fervor_increase = 0.5
+		church_power_modifier = 0.5
+		monthly_piety_accelerator = 0.01
+		yearly_karma_decay = 0.5
+		yearly_doom_reduction = 5
+		yearly_authority = 0.6
+		yearly_patriarch_authority = 0.05
 	}
 	religious_tradition = {
-		prestige = 1
+		prestige = 5
 	}
 	inquisition = {
-		missionary_maintenance_cost = -0.5
-		prestige_per_development_from_conversion = 0.1
+		missionary_maintenance_cost = -1
+		prestige_per_development_from_conversion = 0.5
 	}
 	deus_vult = {
 		cb_on_religious_enemies = yes
@@ -386,10 +387,6 @@ diplomatic_ideas = {
 	bonus = {
 		reduced_stab_impacts = yes
 	}
-	
-	trigger = {
-		NOT = {has_idea_group = influence_ideas}
-	}
 
 	foreign_embassies = {
 		diplomats = 1
@@ -434,10 +431,6 @@ offensive_ideas = {
 	bonus = {
 		recover_army_morale_speed = 0.05
 	}
-	
-	trigger = {
-		NOT = {has_idea_group = defensive_ideas}
-	}
 
 	bayonet_leaders = {
 		leader_land_shock = 1
@@ -474,10 +467,6 @@ defensive_ideas = {
 	bonus = {
 		hostile_attrition = 1
 		max_hostile_attrition = 1 
-	}
-	
-	trigger = {
-		NOT = {has_idea_group = offensive_ideas}
 	}
 
 	battlefield_commisions = {
@@ -563,29 +552,32 @@ economic_ideas = {
 	category = ADM
 
 	bonus = {
-		development_cost = -0.1
+		development_cost = -0.3
 	}
 
 	bureaucracy = {
-		global_tax_modifier = 0.10
+		global_tax_modifier = 0.20
 	}
 	organised_construction = {
-		build_cost = -0.1
+		build_cost = -0.3
+		build_time = -0.3
+		great_project_upgrade_cost = -0.3
 	}
 	national_bank = {
-		inflation_reduction = 0.1
+		inflation_reduction = 0.5
 	}
 	debt_and_loans = {
-		interest = -0.5
+		interest = -2
 	}
 	centralization = {
-		global_autonomy = -0.05
+		global_autonomy = -0.5
 	}
 	nationalistic_enthusiasm = {
-		land_maintenance_modifier = -0.05
+		land_maintenance_modifier = -0.3
 	}
 	smithian_economics = {
-		production_efficiency = 0.1
+		production_efficiency = 0.3
+		global_trade_goods_size_modifier = 0.3
  	}
 
 	ai_will_do = {
@@ -871,10 +863,6 @@ quality_ideas = {
 	bonus = {
 		discipline = 0.05
 	}
-	
-	trigger = {
-		NOT = {has_idea_group = quantity_ideas}
-	}
 
 	private_to_marshal = {
 		infantry_power = 0.1
@@ -911,9 +899,6 @@ quantity_ideas = {
 	bonus = {
 		land_forcelimit_modifier  = 0.25
 	}
-	trigger = {
-		NOT = {has_idea_group = quality_ideas}
-	}
 	mass_army = {
 		global_manpower_modifier = 0.25
 	}
@@ -947,31 +932,31 @@ expansion_ideas = {
 	important = yes
 
 	bonus = {
- 		min_autonomy_in_territories = -0.1
+ 		min_autonomy_in_territories = -0.5
 	}
 
 	additional_colonists = {
-		colonists = 1
+		colonists = 2
 	}
 	additional_merchants = {
-		merchants = 1
+		merchants = 2
 	}
 	faster_colonists = {
-		global_colonial_growth = 20
+		global_colonial_growth = 100
 	}
 	factories = {
-		rival_border_fort_maintenance = -0.5
-		center_of_trade_upgrade_cost = -0.2
+		rival_border_fort_maintenance = -1
+		center_of_trade_upgrade_cost = -0.5
 	}
 	additional_diplomats = {
-		diplomatic_upkeep = 1
+		diplomatic_upkeep = 3
 	}
 	general_colonization_law  = {
-		colonists = 1
-		colonist_placement_chance = 0.05
+		colonists = 2
+		colonist_placement_chance = 0.5
 	}
 	competetive_merchants  = {
-		global_trade_power = 0.2
+		global_trade_power = 0.4
 	}
 
 	ai_will_do = {
@@ -1026,29 +1011,34 @@ administrative_ideas = {
 	category = ADM
 
 	bonus = {
-		governing_capacity_modifier = 0.25
+		governing_capacity_modifier = 5
 	}
 
 	organised_mercenary_payment = {
-		mercenary_cost = -0.10
+		mercenary_cost = -0.30
+		merc_maintenance_modifier = -0.5
 	}
 	adaptability = {
-		core_creation = -0.25
+		core_creation = -0.5
 	}
 	benefits_for_mercenaries = {
-		merc_maintenance_modifier = -0.15
+		global_prosperity_growth = 0.25
+		state_maintenance_modifier = -0.5
 	}
 	bookkeeping = {
-		interest = -0.5
+		interest = -1
 	}
 	organised_mercenary_recruitment = {
-		mercenary_manpower = 0.25
+		mercenary_manpower = 0.5
 	}
 	administrative_efficiency_idea = {
 		advisor_pool = 1
+		possible_policy = 1
+		free_policy = 1
 	}
 	civil_servants = {
-		adm_tech_cost_modifier = -0.1
+		adm_tech_cost_modifier = -0.3
+		country_admin_power = 1
 	}
 
 	ai_will_do = {
@@ -1064,37 +1054,35 @@ humanist_ideas = {
 	category = ADM
 
 	bonus = {
-		idea_cost = -0.1
+		idea_cost = -0.5
 		yearly_harmony = 0.25  # Used if religion uses harmony (confucianism)
 		brahmins_muslim_loyalty_modifier = 0.1
 		dhimmi_loyalty_modifier = 0.1
 	}
-	
-	trigger = {
-		NOT = {has_idea_group = religious_ideas}
-	}
 
 	tolerance_idea = {
-		religious_unity = 0.25
+		religious_unity = 1
 	}
 	local_traditions = {
-		global_unrest = -2
+		global_unrest = -10
+		land_morale = 0.3
 		harmonization_speed = 0.25
 	}
 	ecumenism = {
-		tolerance_heretic = 2
+		tolerance_heretic = 10
 	}
 	indirect_rule = {
-		years_of_nationalism = -10
+		years_of_nationalism = -50
+		global_manpower_modifier = 0.25
 	}
 	cultural_ties = {
-		num_accepted_cultures = 2
+		num_accepted_cultures = 10
 	}
 	benevolence = {
-		improve_relation_modifier = 0.3
+		improve_relation_modifier = 1
 	}
 	humanist_tolerance = {
-		tolerance_heathen = 2
+		tolerance_heathen = 10
 	}
 
 	ai_will_do = {
@@ -1111,10 +1099,6 @@ influence_ideas = {
 
 	bonus = {
 		unjustified_demands = -0.5
-	}
-	
-	trigger = {
-		NOT = {has_idea_group = diplomatic_ideas}
 	}
 
 	tribute_system = {
